@@ -43,7 +43,7 @@ SetEnv SECRET_TOKEN $SCRIPT_SECRET_TOKEN
 
     # Identify the root application directory
     # Docs: http://httpd.apache.org/docs/2.2/mod/core.html#documentroot
-    DocumentRoot /home/promptly/promptly/public #note this is standard
+    DocumentRoot /home/promptly/promptly/public
 
     # Include some directives for the promptly directory (Details: http://httpd.apache.org/docs/2.2/mod/core.html#directory)
     <Directory /home/promptly/promptly/public>
