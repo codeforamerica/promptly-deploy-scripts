@@ -7,19 +7,22 @@ curl -L https://get.rvm.io | bash -s stable --ruby
 source ~/.rvm/scripts/rvm
 rvm install 2.1.2 #hard-coded, could variable-ize
 rvm --default use 2.1.2
-sudo apt-get install -y libcurl4-openssl-dev apache2-threaded-dev libapr1-dev libaprutil1-dev freetds-dev apache-2-mpm-worker
+sudo apt-get install -y apache2 libcurl4-openssl-dev apache2-threaded-dev libapr1-dev libaprutil1-dev freetds-dev apache-2-mpm-worker
 
 gem install passenger -v 4.0.45 #hard-coded, could variable-ize
 
 passenger-install-apache2-module
 
 ### Have hard-coded the below per Ruby & Passenger gem versions specified above
+sudo touch /etc/apache2/mods-available/passenger.load
 echo "LoadModule passenger_module /home/promptly/.rvm/gems/ruby-2.1.2/gems/passenger-4.0.45/buildout/apache2/mod_passenger.so" | sudo tee /etc/apache2/mods-available/passenger.load
+sudo touch /etc/apache2/mods-available/passenger.conf
 echo "PassengerRoot /home/promptly/.rvm/gems/ruby-2.1.2/gems/passenger-4.0.45
 PassengerDefaultRuby /home/promptly/.rvm/gems/ruby-2.1.2/wrappers/ruby" | sudo tee /etc/apache2/mods-available/passenger.conf
 
 sudo a2enmod passenger
 
+sudo touch /etc/apache2/sites-enabled/promptly
 echo "SetEnv RAILS_ENV production
 SetEnv RACK_ENV production
 SetEnv TWILIO_NUMBER $SCRIPT_TWILIO_NUMBER
