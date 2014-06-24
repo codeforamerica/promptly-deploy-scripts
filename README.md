@@ -28,6 +28,16 @@ cd promptly-deploy-scripts
 ### Step 4 (Scripted): Run setup script
 `bash setup_promptly.sh`
 
+
+### Step 5 (Scripted): Test the web server with a dummy database
+
+Now we'll run a script to set up a dummy database (using SQLite) to make sure that the web server and app is working.
+
+```shell
+cd ~/promptly-deploy-scripts
+bash test_web_server_with_sqlite_database.sh
+```
+
 You should now be able to visit the IP of the server in a browser and view the Promptly deploy, e.g. http://10.0.0.2/
 
 ### Step 5 (Manual): Configure production database connection

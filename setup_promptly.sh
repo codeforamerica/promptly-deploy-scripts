@@ -67,17 +67,3 @@ sudo chown -R promptly promptly/ #necessary for asset precompilation
 cd promptly
 source ~/.rvm/scripts/rvm # Just in case something went wrong and we don't have rvm loaded
 bundle install
-
-# We'll use a temp SQLite database setup to test the web server setup in isolation
-# All steps after this will have to be repeated when you configure the hard database connection
-echo "production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000" | sudo echo tee ~/promptly/promptly/config/database.yml
-
-rake db:schema:load
-rake db:seed
-rake assets:precompile
-
-sudo service apache2 restart
