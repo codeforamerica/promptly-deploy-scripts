@@ -1,3 +1,7 @@
+# Promptly Deployment Scripts
+
+This repository includes instructions and a script to automate most of the process of deploying Promptly onto an Ubuntu server (12.04.4 Long Term Support [LTS] release).
+
 ### STEP 1 (Manual): The redeployer creates a new user `promptly` with sudo and log into it
 
 ```shell
