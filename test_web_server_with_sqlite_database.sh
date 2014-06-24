@@ -1,6 +1,8 @@
 #!/bin/bash
 # We'll use a temp SQLite database setup to test the web server setup in isolation
 
+source ~/.rvm/scripts/rvm
+
 echo "production:
   adapter: sqlite3
   database: db/production.sqlite3
