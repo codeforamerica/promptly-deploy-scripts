@@ -62,14 +62,9 @@ SECRET_TOKEN=$SCRIPT_SECRET_TOKEN" | sudo tee -a /etc/environment
 sudo rm /etc/apache2/sites-enabled/000-default #removing the default apache site
 
 cd ~
-# Will change when the stable deploy branch is determined
-git clone https://github.com/daguar/promptly.git
+git clone https://github.com/codeforamerica/promptly.git
 sudo chown -R promptly promptly/ #necessary for asset precompilation
 cd promptly
-
-# These two commands will go away when the stable deploy branch is determined
-git checkout -b dashboard-changesfordeployment
-git pull origin dashboard-changesfordeployment
 
 source ~/.rvm/scripts/rvm # Just in case something went wrong and we don't have rvm loaded
 bundle install
