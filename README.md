@@ -32,8 +32,6 @@ On the server, edit the `promptly_deploy_config.conf` file, replacing the dummy 
 
 Run the below command; it will ask you for the `promptly` user's password a few times (type it in and hit enter) and also ask you to hit enter to continue a few times.
 
-When it reaches the point of asking you for languages you want to configure Passenger for, make sure Ruby is selected (you can use the arrow keys to move up and down, and the space key to select or deselect languages).
-
 ```shell
 bash setup_promptly.sh
 ```
