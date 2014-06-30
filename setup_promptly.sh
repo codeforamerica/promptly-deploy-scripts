@@ -11,7 +11,7 @@ sudo apt-get install -y apache2 libcurl4-openssl-dev apache2-threaded-dev libapr
 
 gem install passenger -v 4.0.45 #hard-coded, could variable-ize
 
-passenger-install-apache2-module
+passenger-install-apache2-module --languages ruby --auto
 
 ### Have hard-coded the below per Ruby & Passenger gem versions specified above
 sudo touch /etc/apache2/mods-available/passenger.load
