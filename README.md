@@ -5,10 +5,11 @@ This repository includes instructions and a script to automate most of the proce
 
 ### Step 1 (Manual): Create a new user `promptly` with sudo and log into it
 
-Create a new user `promptly` by using the below commands; give the user a password and write it down (all other account details are irrelevant).
+Create a new user `promptly` by using the below commands; give the user a password and write it down.
 
 ```shell
-adduser promptly --disabled-password --gecos "" --ingroup sudo && echo promptly:promptly chpasswd
+adduser promptly --gecos "" --ingroup sudo
+# Set a password for the 'promptly' user here
 su promptly
 cd ~
 ```
