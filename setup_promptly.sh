@@ -9,6 +9,9 @@ rvm install 2.1.2 #hard-coded, could variable-ize
 rvm --default use 2.1.2
 sudo apt-get install -y apache2 libcurl4-openssl-dev apache2-threaded-dev libapr1-dev libaprutil1-dev freetds-dev #apache-2-mpm-worker (was not working)
 
+# Install RVM dependencies
+sudo apt-get install gawk g++ gcc make libc6-dev libreadline6-dev zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automate libtool bison pkg-config libffi-dev
+
 gem install passenger -v 4.0.45 #hard-coded, could variable-ize
 
 passenger-install-apache2-module --languages ruby --auto
