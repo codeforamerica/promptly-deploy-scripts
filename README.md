@@ -8,8 +8,7 @@ This repository includes instructions and a script to automate most of the proce
 Create a new user `promptly` by using the below commands; give the user a password and write it down (all other account details are irrelevant).
 
 ```shell
-sudo adduser promptly
-sudo adduser promptly sudo
+adduser promptly --disabled-password --gecos "" --ingroup sudo promptly && echo promptly:promptly chpasswd
 su promptly
 cd ~
 ```
