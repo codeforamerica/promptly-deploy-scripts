@@ -1,6 +1,6 @@
 # Promptly Deployment Scripts
 
-These instructions (and included scripts) streamline deploying [Promptly]() onto an Ubuntu server, specifically:
+These instructions (and included scripts) streamline deploying [Promptly](https://github.com/codeforamerica/promptly) onto an Ubuntu server, specifically:
 
 - Ubuntu 12.04.4 LTS
 - 1GB RAM minimum
