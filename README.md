@@ -1,6 +1,9 @@
 # Promptly Deployment Scripts
 
-This repository includes instructions and a script to automate most of the process of deploying Promptly onto an Ubuntu server (12.04.4 Long Term Support [LTS] release).
+These instructions (and included scripts) streamline deploying [Promptly]() onto an Ubuntu server, specifically:
+
+- Ubuntu 12.04.4 LTS
+- 1GB RAM minimum
 
 
 ### Step 1 (Manual): Create a new user `promptly` with sudo and log into it
@@ -9,7 +12,6 @@ Create a new user `promptly` by using the below commands; give the user a passwo
 
 ```shell
 adduser promptly --gecos "" --ingroup sudo
-# Set a password for the 'promptly' user here
 su promptly
 cd ~
 ```
