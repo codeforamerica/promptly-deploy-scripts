@@ -2,17 +2,17 @@
 
 These instructions (and included scripts) streamline deploying [Promptly](https://github.com/codeforamerica/promptly) onto an Ubuntu server, specifically:
 
-- Ubuntu 12.04.4 LTS
+- Ubuntu 14
 - 1GB RAM minimum
 
 
-### Step 1 (Manual): Create a new user `promptly` with sudo and log into it
+### Step 1 (Manual): Create a new user `somervillain` with sudo and log into it
 
-Create a new user `promptly` by using the below commands; give the user a password and write it down.
+Create a new user `somervillain` by using the below commands; give the user a password and write it down.
 
 ```shell
-adduser promptly --gecos "" --ingroup sudo
-su promptly
+adduser somervillain --gecos "" --ingroup sudo
+su somervillain
 cd ~
 ```
 
@@ -21,6 +21,7 @@ cd ~
 sudo apt-get install -y git
 git clone https://github.com/daguar/promptly-deploy-scripts.git
 cd promptly-deploy-scripts
+# Switch to Somerville branch!
 ```
 
 ### Step 3 (Manual): Configure the deployment variables
