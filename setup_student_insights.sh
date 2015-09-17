@@ -9,6 +9,7 @@ source ~/.rvm/scripts/rvm
 rvm install 2.1.6 #hard-coded, could variable-ize
 rvm --default use 2.1.6
 sudo apt-get install -y apache2 libcurl4-openssl-dev apache2-threaded-dev libapr1-dev libaprutil1-dev freetds-dev #apache-2-mpm-worker (was not working)
+sudo apt-get install -y nodejs  # JavaScript runtime
 
 gem install passenger -v 4.0.45 #hard-coded, could variable-ize
 
