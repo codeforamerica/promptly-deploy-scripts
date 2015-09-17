@@ -1,6 +1,3 @@
-source promptly_deploy_config.conf # Get our deploy-specific variables
-# May want to raise an error and stop script if any necessary variables are blank
-
 sudo apt-get update
 sudo apt-get install -y curl git
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -43,7 +40,7 @@ SetEnv RACK_ENV production
     # Docs: http://httpd.apache.org/docs/2.2/mod/core.html#documentroot
     DocumentRoot /home/somervillain/somerville-teacher-tool/public
 
-    # Include some directives for the promptly directory (Details: http://httpd.apache.org/docs/2.2/mod/core.html#directory)
+    # Details: http://httpd.apache.org/docs/2.2/mod/core.html#directory
     <Directory /home/somervillain/somerville-teacher-tool/public>
             Allow from all
             Options -MultiViews
@@ -53,10 +50,9 @@ SetEnv RACK_ENV production
 echo "RAILS_ENV=production
 RACK_ENV=production" | sudo tee -a /etc/environment
 
-sudo rm /etc/apache2/sites-enabled/000-default #removing the default apache site
+sudo rm /etc/apache2/sites-enabled/000-default.conf #removing the default apache site
 
 cd ~
-# Will change when the stable deploy branch is determined
 git clone https://github.com/codeforamerica/somerville-teacher-tool.git
 sudo chown -R somervillain somerville-teacher-tool/ #necessary for asset precompilation
 cd somerville-teacher-tool
