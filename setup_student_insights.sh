@@ -53,10 +53,6 @@ RACK_ENV=production" | sudo tee -a /etc/environment
 
 sudo rm /etc/apache2/sites-enabled/000-default.conf #removing the default apache site
 
-# Postgres DB setup
-sudo -u postgres createuser ubuntu -s
-createdb student_insights_production
-
 cd ~
 git clone https://github.com/codeforamerica/somerville-teacher-tool.git
 sudo chown -R somervillain somerville-teacher-tool/ #necessary for asset precompilation
