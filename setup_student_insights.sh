@@ -2,7 +2,8 @@ source promptly_deploy_config.conf # Get our deploy-specific variables
 # May want to raise an error and stop script if any necessary variables are blank
 
 sudo apt-get update
-sudo apt-get install -y curl
+sudo apt-get install -y curl git
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -L https://get.rvm.io | bash -s stable --ruby
 source ~/.rvm/scripts/rvm
 rvm install 2.1.6 #hard-coded, could variable-ize
