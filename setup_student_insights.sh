@@ -15,10 +15,10 @@ passenger-install-apache2-module --languages ruby --auto
 
 ### Have hard-coded the below per Ruby & Passenger gem versions specified above
 sudo touch /etc/apache2/mods-available/passenger.load
-echo "LoadModule passenger_module /home/somervillain/.rvm/gems/ruby-2.1.6/gems/passenger-4.0.45/buildout/apache2/mod_passenger.so" | sudo tee /etc/apache2/mods-available/passenger.load
+echo "LoadModule passenger_module /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/passenger-4.0.45/buildout/apache2/mod_passenger.so" | sudo tee /etc/apache2/mods-available/passenger.load
 sudo touch /etc/apache2/mods-available/passenger.conf
-echo "PassengerRoot /home/somervillain/.rvm/gems/ruby-2.1.6/gems/passenger-4.0.45
-PassengerDefaultRuby /home/somervillain/.rvm/gems/ruby-2.1.6/wrappers/ruby" | sudo tee /etc/apache2/mods-available/passenger.conf
+echo "PassengerRoot /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/passenger-4.0.45
+PassengerDefaultRuby /home/ubuntu/.rvm/gems/ruby-2.1.6/wrappers/ruby" | sudo tee /etc/apache2/mods-available/passenger.conf
 
 sudo a2enmod passenger
 
@@ -35,14 +35,14 @@ SetEnv RACK_ENV production
 
     # Identify the web server
     # Docs: http://httpd.apache.org/docs/2.2/mod/core.html#servername
-    ServerName somervillain
+    ServerName ubuntu
 
     # Identify the root application directory
     # Docs: http://httpd.apache.org/docs/2.2/mod/core.html#documentroot
-    DocumentRoot /home/somervillain/somerville-teacher-tool/public
+    DocumentRoot /home/ubuntu/somerville-teacher-tool/public
 
     # Details: http://httpd.apache.org/docs/2.2/mod/core.html#directory
-    <Directory /home/somervillain/somerville-teacher-tool/public>
+    <Directory /home/ubuntu/somerville-teacher-tool/public>
             Allow from all
             Options -MultiViews
     </Directory>
@@ -55,7 +55,7 @@ sudo rm /etc/apache2/sites-enabled/000-default.conf #removing the default apache
 
 cd ~
 git clone https://github.com/codeforamerica/somerville-teacher-tool.git
-sudo chown -R somervillain somerville-teacher-tool/ #necessary for asset precompilation
+sudo chown -R ubuntu somerville-teacher-tool/ #necessary for asset precompilation
 cd somerville-teacher-tool
 
 source ~/.rvm/scripts/rvm # Just in case something went wrong and we don't have rvm loaded
