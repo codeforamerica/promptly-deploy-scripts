@@ -19,9 +19,8 @@ cd ~
 ### Step 2 (Manual): Get setup scripts from GitHub
 ```shell
 sudo apt-get install -y git
-git clone https://github.com/daguar/promptly-deploy-scripts.git
+git clone -b somerville-v1 https://github.com/daguar/promptly-deploy-scripts.git
 cd promptly-deploy-scripts
-# Switch to Somerville branch!
 ```
 
 ### Step 3 (Manual): Configure the deployment variables
