@@ -22,7 +22,7 @@ export SECRET_TOKEN=fakefakefakefakefakefakefakefakefakefakefakefakefakefakefake
 cd /home/ubuntu/somerville-teacher-tool
 
 rake db:schema:load
-rake db:seed
+rake db:seed:demo
 rake assets:precompile
 
 sudo service apache2 restart
