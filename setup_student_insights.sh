@@ -59,4 +59,5 @@ sudo chown -R ubuntu somerville-teacher-tool/ #necessary for asset precompilatio
 cd somerville-teacher-tool
 
 source ~/.rvm/scripts/rvm # Just in case something went wrong and we don't have rvm loaded
+gem install bundler
 bundle install
