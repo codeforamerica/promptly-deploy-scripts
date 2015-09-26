@@ -54,7 +54,7 @@ RACK_ENV=production" | sudo tee -a /etc/environment
 sudo rm /etc/apache2/sites-enabled/000-default.conf #removing the default apache site
 
 cd ~
-git clone https://github.com/codeforamerica/somerville-teacher-tool.git
+git clone -b no-ssl-testing-branch https://github.com/codeforamerica/somerville-teacher-tool.git
 sudo chown -R ubuntu somerville-teacher-tool/ #necessary for asset precompilation
 cd somerville-teacher-tool
 
