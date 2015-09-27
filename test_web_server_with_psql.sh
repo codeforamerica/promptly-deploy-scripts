@@ -33,6 +33,7 @@ export SECRET_TOKEN=fakefakefakefakefakefakefakefakefakefakefakefakefakefakefake
 
 cd /home/ubuntu/somerville-teacher-tool
 
+source ~/.rvm/scripts/rvm
 rake db:schema:load
 rake db:seed:demo
 rake assets:precompile
