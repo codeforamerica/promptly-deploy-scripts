@@ -4,8 +4,6 @@
 sudo -u postgres createuser ubuntu -s
 createdb student_insights_production
 
-source ~/.rvm/scripts/rvm
-
 echo "production:
   adapter: postgresql
   encoding: unicode
@@ -25,4 +23,5 @@ rake db:schema:load
 rake db:seed:demo
 rake assets:precompile
 
+source ~/.rvm/scripts/rvm
 sudo service apache2 restart
