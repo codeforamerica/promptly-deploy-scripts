@@ -15,10 +15,11 @@ passenger-install-apache2-module --languages ruby --auto
 
 ### Have hard-coded the below per Ruby & Passenger gem versions specified above
 sudo touch /etc/apache2/mods-available/passenger.load
-echo "LoadModule passenger_module /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/passenger-4.0.45/buildout/apache2/mod_passenger.so" | sudo tee /etc/apache2/mods-available/passenger.load
-sudo touch /etc/apache2/mods-available/passenger.conf
-echo "PassengerRoot /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/passenger-4.0.45
-PassengerDefaultRuby /home/ubuntu/.rvm/gems/ruby-2.1.6/wrappers/ruby" | sudo tee /etc/apache2/mods-available/passenger.conf
+echo "LoadModule passenger_module /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/passenger-4.0.45/buildout/apache2/mod_passenger.so
+   <IfModule mod_passenger.c>
+     PassengerRoot /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/passenger-4.0.45
+     PassengerDefaultRuby /home/ubuntu/.rvm/gems/ruby-2.1.6/wrappers/ruby
+   </IfModule>" | sudo tee /etc/apache2/mods-available/passenger.load
 
 sudo a2enmod passenger
 
@@ -46,6 +47,7 @@ SetEnv RACK_ENV production
             Allow from all
             Options -MultiViews
             Require all granted
+
     </Directory>
 </VirtualHost>" | sudo tee /etc/apache2/sites-enabled/somerville-teacher-tool.conf
 
