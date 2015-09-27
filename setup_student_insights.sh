@@ -46,7 +46,7 @@ SetEnv RACK_ENV production
             Allow from all
             Options -MultiViews
     </Directory>
-</VirtualHost>" | sudo tee /etc/apache2/sites-enabled/somerville-teacher-tool
+</VirtualHost>" | sudo tee /etc/apache2/sites-enabled/somerville-teacher-tool.conf
 
 echo "RAILS_ENV=production
 RACK_ENV=production" | sudo tee -a /etc/environment
