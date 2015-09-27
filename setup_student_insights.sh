@@ -27,7 +27,8 @@ SetEnv RACK_ENV production
 
 # Standard apache config
 <VirtualHost *:80>
-    SetEnv GEM_HOME /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/
+    # Set Passenger Ruby version / location
+    PassengerRuby /home/ubuntu/.rvm/rubies/ruby-2.1.6/bin/ruby
 
     # Set Passenger user to root
     PassengerUserSwitching on
