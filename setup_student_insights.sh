@@ -45,6 +45,7 @@ SetEnv RACK_ENV production
     <Directory /home/ubuntu/somerville-teacher-tool/public>
             Allow from all
             Options -MultiViews
+            Require all granted
     </Directory>
 </VirtualHost>" | sudo tee /etc/apache2/sites-enabled/somerville-teacher-tool.conf
 
