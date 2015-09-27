@@ -14,7 +14,6 @@ gem install passenger -v 4.0.45 #hard-coded, could variable-ize
 passenger-install-apache2-module --languages ruby --auto
 
 ### Have hard-coded the below per Ruby & Passenger gem versions specified above
-sudo touch /etc/apache2/mods-available/passenger.load
 echo "LoadModule passenger_module /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/passenger-4.0.45/buildout/apache2/mod_passenger.so
    <IfModule mod_passenger.c>
      PassengerRoot /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/passenger-4.0.45
@@ -23,12 +22,13 @@ echo "LoadModule passenger_module /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/passeng
 
 sudo a2enmod passenger
 
-sudo touch /etc/apache2/sites-enabled/somerville-teacher-tool
 echo "SetEnv RAILS_ENV production
 SetEnv RACK_ENV production
 
 # Standard apache config
 <VirtualHost *:80>
+    SetEnv GEM_HOME /home/ubuntu/.rvm/gems/ruby-2.1.6/gems/
+
     # Set Passenger user to root
     PassengerUserSwitching on
     PassengerUser root
